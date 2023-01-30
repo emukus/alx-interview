@@ -11,7 +11,7 @@ def canUnlockAll(boxes):
     """
     box = len(boxes) * [False]
     box[0] = True
-    keys = 0
+    keys = [0]
 
     for each in keys:
         for i in boxes[each]:
