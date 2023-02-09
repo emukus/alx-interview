@@ -7,10 +7,9 @@ def minOperations(n):
     """Returns the fewest no. of operations needed"""
     operations = 0
     iterator = 2
-    
     while n > 1:
         while n % iterator == 0:
             operations += iterator
             n /= iterator
-        iterator +=1
+        iterator += 1
     return operations
