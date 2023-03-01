@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """N Queens Challenge"""
 import sys
-from typing import List
 
 
 if __name__ == "__main__":
@@ -20,7 +19,7 @@ if __name__ == "__main__":
         exit(1)
 
     solutions = []
-    placed_queens: List = []  # coordinates format [row, column]
+    placed_queens = []  # coordinates format [row, column]
     stop = False
     r = 0
     c = 0
