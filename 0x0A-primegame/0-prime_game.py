@@ -15,8 +15,8 @@ def prime_btwn(n):
 
     for k in range(2, n + 1):
         is_prime = True
-        for l in range(2, k // 2 + 1):
-            if k % l == 0:
+        for j in range(2, k // 2 + 1):
+            if k % j == 0:
                 is_prime = False
                 break
         if is_prime:
