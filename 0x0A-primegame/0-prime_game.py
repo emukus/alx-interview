@@ -5,24 +5,20 @@ the README"""
 
 def prime_btwn(n):
     """
-    calculate prime numbers btwn 1 and n
+    Determine prime numbers btwn 1 and n
     Args:
         n (int): the number to calculate prime numbers up to
     Returns:
         int: the number of prime numbers btwn 1 and n
     """
-    prime_numbers = 0
-
-    for k in range(2, n + 1):
-        is_prime = True
-        for j in range(2, k // 2 + 1):
-            if k % j == 0:
-                is_prime = False
-                break
-        if is_prime:
-            prime_numbers += 1
-    return prime_numbers
-
+    prime = []
+    sieve = [True] * (n + 1)
+    for p in range(2, n + 1):
+        if (sieve[p]):
+            prime.append(p)
+            for i in range(p, n + 1, p):
+                sieve[i] = False
+    return prime
 
 def isWinner(x, nums):
     """
@@ -34,17 +30,17 @@ def isWinner(x, nums):
        string: the winner of the game (Ben or Maria),
        or None if there is a tie
     """
-    if not x or not nums:
+    if x is None or nums is None or x == 0 or nums == []:
         return None
-    ben = 0
-    maria = 0
+    Maria = Ben = 0
     for i in range(x):
-        prime_nums = prime_btwn(nums[i])
-        if prime_nums % 2 == 0:
-            ben += 1
+        prime = prime_btwn(nums[i])
+        if len(prime) % 2 == 0:
+            Ben += 1
         else:
-            maria += 1
-    if ben == maria:
-        return None
-    winner = "Ben" if ben > maria else "Maria"
-    return winner
+            Maria += 1
+    if Maria > Ben:
+        return 'Maria'
+    elif Ben > Maria:
+        return 'Ben'
+    return None
