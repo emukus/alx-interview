@@ -38,8 +38,8 @@ def isWinner(x, nums):
         return None
     ben = 0
     maria = 0
-    for k in range(x):
-        prime_nums = prime_btwn(nums[k])
+    for i in range(x):
+        prime_nums = prime_btwn(nums[i])
         if prime_nums % 2 == 0:
             ben += 1
         else:
