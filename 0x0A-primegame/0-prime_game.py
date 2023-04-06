@@ -20,6 +20,7 @@ def prime_btwn(n):
                 sieve[i] = False
     return prime
 
+
 def isWinner(x, nums):
     """
     Determines the winner of a game of prime numbers.
